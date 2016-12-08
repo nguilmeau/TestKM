@@ -20,9 +20,11 @@ public abstract class TodoStorage {
 	
 	private void validate(String todosAsString){
 		logger.debug("Checking [{}]",todosAsString);
+		/*
 		if(todosAsString.matches(".*([Rr].silier.*[Oo]range).*")  || todosAsString.matches(".*([Cc]ancel.*[Oo]range).*") ){
 			throw new CancellationException("you can not cancel an orange service");
 		}
+		*/
 		if(todosAsString.matches(".*([fF]ree|[Ss][Ff][Rr]|[Bb]ouygues).*")){
 			throw new BusinessConcurrencyException("tasks related to orange competitors are not allowed");
 		}
@@ -39,8 +41,8 @@ public abstract class TodoStorage {
 	}
 
 	/**
-	 * Met a jour la liste des tâches
-	 * @param todosAsString La liste des tâches sous la formes d'un tableau JSON serialisé 
+	 * Met a jour la liste des tï¿½ches
+	 * @param todosAsString La liste des tï¿½ches sous la formes d'un tableau JSON serialisï¿½ 
 	 */
 	public abstract void doPut(JSONArray todosAsString) throws IOException;
 	
